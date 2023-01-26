@@ -12,6 +12,7 @@ import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
+import Welcome from "./components/Welcome";
 
 import EventBus from "./common/EventBus";
 
@@ -123,6 +124,7 @@ const App = () => {
           <Route path="/user" element={<BoardUser/>} />
           <Route path="/mod" element={<BoardModerator/>} />
           <Route path="/admin" element={<BoardAdmin/>} />
+          <Route path="/confirm/:confirmationCode" component={Welcome} />
         </Routes>
       </div>
 

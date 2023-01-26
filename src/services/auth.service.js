@@ -33,11 +33,18 @@ const getCurrentUser = () => {
   return JSON.parse(localStorage.getItem("user"));
 };
 
+const verifyUser = (code) => {
+  return axios.get(API_URL + "confirm/" + code).then((response) => {
+    return response.data;
+  });
+};
+
 const AuthService = {
   register,
   login,
   logout,
   getCurrentUser,
+  verifyUser,
 };
 
 export default AuthService;
